@@ -34,6 +34,7 @@ article {
     padding: 20px 40px;
     margin-bottom: 60px; /* para espaciar elementos es mejor usar siempre el mismo en cada elemento
     sea margin-bottom o margin-top, y no ponerle margin bottom y top a uno solo */
+    height: 80px;
 }
 
 .post-header {
@@ -45,6 +46,7 @@ aside {
     border-top: 5px solid #1098ad;
     border-bottom: 5px solid #1098ad;
     padding: 50px 0;
+    width: 500px;
 }
 
 h1, h2, h3, h4, p, li {
@@ -166,6 +168,18 @@ a:active {
 despu[es la clase .clase despues el element selector div, li, etc, finalmente el universal selector *  */
 
 /* Resoling conflicts */
+
+.post-img {
+   /* width: 800px;
+    height: auto;
+    este height auto lo necesito si seteo asi el width porque en el html tengo seteado height y width
+    el width lo sobreescribo aca con css, pero me queda el height que defini en el html
+    entonces este height auto hace que la imagen acomode la altura y quede con las proporciones originales
+    */
+
+    width: 100%;
+    height: auto;
+}
 
 #copyright {
     color: red;
