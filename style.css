@@ -20,12 +20,14 @@ body {
     color: #444444;
     font-family: sans-serif;
     border-top: 10px solid #1098ad;
+    position: relative;
 }
 
 .container {
-    width: 700px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 70%;
+ /*   margin-left: auto;
+    margin-right: auto;*/
+    margin: 0 auto; /* esto es un shorthand para lo que esta comentado arriba */
 }
 
 article {
@@ -40,7 +42,7 @@ article {
     padding: 20px 40px;
     margin-bottom: 60px; /* para espaciar elementos es mejor usar siempre el mismo en cada elemento
     sea margin-bottom o margin-top, y no ponerle margin bottom y top a uno solo */
-    height: 80px;
+    /* height: 80px; */
 }
 
 .post-header {
@@ -97,6 +99,7 @@ p {
 ul, ol {
     margin-left: 50px;
     margin-bottom: 20px
+    
 }
 
 li {
@@ -187,6 +190,20 @@ despu[es la clase .clase despues el element selector div, li, etc, finalmente el
     height: auto;
 }
 
+nav a:link {
+    /* background-color: orange;
+    margin: 20px;
+    padding: 20px;
+    display: block; */
+    margin-right: 30px;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+nav a:link:last-child {
+    margin-right: 0;
+}
+
 #copyright {
     color: red;
 }
@@ -202,3 +219,67 @@ despu[es la clase .clase despues el element selector div, li, etc, finalmente el
 footer p {
     color: green;
 }
+
+button {
+    font-size: 22px;
+    padding: 20px;
+    cursor: pointer;
+
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+}
+
+/* 
+    --------- TIPOS DE BOXES ---------
+
+    * las boxes mas comunes, se llaman block elements, como un div, article, h1, etc ocupan todo el ancho de su contenedor
+    body, main, header, footer, section, nav, aside, div, h1-h6, p, ul, ol, li, etc son block elements
+    
+    * pero despues estan las inline boxes, como <strong> <a> se ajustan al tamanio de su contenido.
+    a los inline elements los paddings y margins se le aplican solamente horizontalmente, left and right
+    no causan line-breaks 
+    HEIGHTS AND WEIGHTS DO NOT APPLY!
+    inline elemnts por default: a, strong, em, button, etc
+
+
+    Podemos cambiar el tipo de caja con la propiedad display: block o display: inline
+
+
+    * inline-block es una mezcla entre las dos
+    son inline desde afuera, pero se comportan como block adentro 
+    solo ocupan el espacio de su contenido, no causan line breaks
+    se comportan como blocks con los heights y widths, margins, paddings
+    se setean con display: inline-block
+
+    los elementos img se comportan como inline-blocks por defecto
+
+
+    ------------ POSITIONING -------------
+
+    el normal flow es como los elementos se acomodan por defecto, tal como estan escritos en el html de acuerdo
+    a las reglas de las boxes
+    esto equivale a setear position: relative
+    los elementos que se disponen de esta manera estan "in flow"
+
+    absolute positioning te permite tener elementos "out of flow", en posiciones arbitrarias
+    no impactan en los elementos que lo rodean, se puede superponer
+`   se usan offset top, bottom, left y right para posicionar el elemento respecto de su contenedor relativamente posicionado
+    o sea, el contenedor con position: relative (por default)
+
+    por default los offsets van a ser en relacion al viewport, cosa que normalemente no queremos, tenemos que especificar 
+    respecto de que estamos posicionando seteando explicitamente position: relative.
+
+    no hay que abusar de esto, se usa para poner un elemento especial en un lugar especial pero no para el 
+    layout general de los elementos de la pagina
+
+
+
+
+
+
+
+
+    
+    
+*/
