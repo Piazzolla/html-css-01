@@ -72,9 +72,25 @@ h1 {
     font-style: italic;
 }
 
+
 h2 {
     font-size: 40px;
-    margin-bottom: 30px
+    margin-bottom: 30px;
+    position: relative;
+}
+
+h2::after {
+    content: "TOP";
+    background-color: #ffe30e;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    padding: 5px 10px;
+    position: absolute;
+    top: -10px;
+    right: -25px;
+
 }
 
 h3 {
@@ -230,6 +246,11 @@ button {
     right: 50px;
 }
 
+button::first-letter {
+    color: red;
+}
+
+
 /* 
     --------- TIPOS DE BOXES ---------
 
@@ -275,8 +296,26 @@ button {
 
 
 
+    ------------------------------------------
+
+    Pseudo-classes se seleccionan con un solo :
+    Pseudo-elements se seleccionan con dos :: 
 
 
+    adjacent sibling, elementos que tienen un mismo padre, y que estan uno despues del otro
+    h3 + p::first-line {
+        color: red;
+    }
+    con esto selecciono los p que vienen despues de un h3 solamente
+
+    ---
+    
+    h2::after {
+        content: "lalala";
+    } 
+    con esto agrego un elemento de texto con ese contenido y que es customizable con css
+    es uno de los usos mas comunes de position: absolute para ubicar este elemento ad hoc respecto
+    del padre (h2 en este caso)
 
 
 
