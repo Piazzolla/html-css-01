@@ -180,6 +180,7 @@ a:hover {
     color: orangered;
     font-weight: bold;
     text-decoration: underline orangered;
+
 }
 
 a:active {
@@ -309,7 +310,7 @@ button::first-letter {
     con esto selecciono los p que vienen despues de un h3 solamente
 
     ---
-    
+
     h2::after {
         content: "lalala";
     } 
