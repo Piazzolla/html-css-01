@@ -10,9 +10,10 @@
 * {
     /* esto resetea todos los defaults del browser, esto es muy util
     hay que hacerlo aca en el universal selector porque si lo haces en body
-    no te agarra los texts  */ 
+    no te agarra los texts  */
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 
@@ -25,9 +26,10 @@ body {
 
 .container {
     width: 70%;
- /*   margin-left: auto;
+    /*   margin-left: auto;
     margin-right: auto;*/
-    margin: 0 auto; /* esto es un shorthand para lo que esta comentado arriba */
+    margin: 0 auto;
+    /* esto es un shorthand para lo que esta comentado arriba */
 }
 
 article {
@@ -40,7 +42,8 @@ article {
     padding-left: 40px;  
     padding-right: 40px;   */
     padding: 20px 40px;
-    margin-bottom: 60px; /* para espaciar elementos es mejor usar siempre el mismo en cada elemento
+    margin-bottom: 60px;
+    /* para espaciar elementos es mejor usar siempre el mismo en cada elemento
     sea margin-bottom o margin-top, y no ponerle margin bottom y top a uno solo */
     /* height: 80px; */
 }
@@ -53,15 +56,23 @@ aside {
     background-color: #f7f7f7;
     border-top: 5px solid #1098ad;
     border-bottom: 5px solid #1098ad;
-    padding: 50px 0;
-    width: 500px;
+    padding: 50px 40px;
+    /* width: 500px; */
+
 }
 
-h1, h2, h3, h4, p, li {
+h1,
+h2,
+h3,
+h4,
+p,
+li {
     font-family: sans-serif;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     color: #1098ad;
     text-emphasis: '';
 }
@@ -103,6 +114,7 @@ h4 {
     font-size: 30px;
     text-transform: uppercase;
     text-align: center;
+    margin-bottom: 30px;
 }
 
 p {
@@ -112,10 +124,10 @@ p {
 
 }
 
-ul, ol {
+ul,
+ol {
     margin-left: 50px;
     margin-bottom: 20px
-    
 }
 
 li {
@@ -149,6 +161,7 @@ li:last-child {
 
 .related-posts {
     list-style: none;
+    margin-left: 0;
 }
 
 
@@ -184,9 +197,10 @@ a:hover {
 }
 
 a:active {
- background-color: black;
- font-style: italic   
+    background-color: black;
+    font-style: italic
 }
+
 /* Normalmente el styling de a se hace en este orden, link, visited, hover, active */
 /* LVHA */
 
@@ -196,7 +210,7 @@ despu[es la clase .clase despues el element selector div, li, etc, finalmente el
 /* Resoling conflicts */
 
 .post-img {
-   /* width: 800px;
+    /* width: 800px;
     height: auto;
     este height auto lo necesito si seteo asi el width porque en el html tengo seteado height y width
     el width lo sobreescribo aca con css, pero me queda el height que defini en el html
@@ -323,3 +337,80 @@ button::first-letter {
     
     
 */
+
+
+/* ----------- FLOATS ----------------- ya no se usan, se usa flex y grid */
+/*
+
+cuando definis float para un elemento, es como si hicieras absolute positioning, en el sentido de que el elemento
+deja de estar en el normal flow de la pagina, pero a la vez es diferente porque sigue afectando al resto 
+de los elementos con su margin, etc. El texto y los elementos inline van a estar wrapping el floated element.
+El contenedor no ajusta su height al elemento.
+*/
+
+.author-img {
+    float: left;
+    margin-bottom: 20px;
+}
+
+.author {
+    margin-top: 10px;
+    float: left;
+    margin-left: 20px;
+}
+
+h1 {
+    float: left;
+
+}
+
+nav {
+    float: right;
+}
+
+/* .clear {  arreglo el problema de collapsing heights  
+    clear: both;
+}
+*/
+
+/* The Clear Fix Hack */
+.clearfix::after {
+    clear: both;
+    content: "";
+    display: block;
+}
+
+
+.container {
+    width: 1200px;
+}
+
+article {
+    width: 825px;
+    float: left;
+}
+
+aside {
+    width: 300px;
+    float: right;
+}
+
+footer {
+    clear: both;
+}
+
+
+/*
+usando
+
+box-sizing: boder-box; 
+
+haces que el height y width del elemento sean los del contenido MAS EL PADDING Y EL BORDE, entonces es mas facil ubicar
+los elementos
+
+box-sizing no es de las propiedades que se heredan
+para que se aplique a todos los elementos tengo que agregarlo en el selector universal *
+
+*/
+
+
